@@ -53,7 +53,7 @@ export const OnboardingPreferencesPage: React.FC = () => {
 
 
   const onSubmit = (data: OnboardingPreferences) => {
-    // Mark the profile as complete and save the final preferences.
+    // Correctly nest preferences and mark the profile as complete within the profile object.
     updateProfileMutation.mutate({ 
         profile: {
             onboardingPreferences: data,

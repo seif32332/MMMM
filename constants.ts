@@ -1,4 +1,5 @@
 
+
 import { UserPrimaryRole, FormDefinition, TranslationKey } from './types';
 
 interface RoleInfo {
@@ -28,7 +29,6 @@ export const ROLES: RoleInfo[] = [
     titleKey: 'roles.job_seeker.title',
     descriptionKey: 'roles.job_seeker.description',
   },
-  // FIX: Add TRADER role for consistency, as it exists in the enum and forms.
   {
     id: UserPrimaryRole.TRADER,
     titleKey: 'roles.trader.title',

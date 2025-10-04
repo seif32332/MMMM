@@ -27,6 +27,16 @@ export const en = {
 
   // Auth
   'auth.logout_success': 'You have been logged out successfully.',
+  'auth.verify_email.title': 'Verify Your Email',
+  'auth.verify_email.subtitle': 'Please check your inbox for a verification link to complete your registration.',
+  'auth.verify_email.verifying': 'Verifying your email...',
+  'auth.verify_email.success.title': 'Email Verified!',
+  'auth.verify_email.success.message': 'Your email has been successfully verified. Redirecting you to onboarding...',
+  'auth.verify_email.error.title': 'Verification Failed',
+  'auth.verify_email.error.message': 'The verification link is invalid or has expired. Please try again.',
+  'auth.verification_banner.title': 'Your email is not verified.',
+  'auth.verification_banner.resend_link': 'Resend verification email.',
+  'auth.verification_banner.resend_success': 'A new verification email has been sent.',
 
   // Login Page
   'login.title': 'Log In to your Account',
@@ -57,7 +67,7 @@ export const en = {
   'register.error.policy_required': 'You must accept the terms and conditions.',
   'register.error.email_exists': 'An account with this email already exists.',
   'register.success.title': 'Account Created!',
-  'register.success.message': 'Welcome to Majlis Pro. Redirecting you to onboarding...',
+  'register.success.message': 'Welcome to Majlis Pro. Please check your email to verify your account.',
 
   // Password Strength
   'password.strength.very_weak': 'Very Weak',

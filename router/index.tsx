@@ -21,6 +21,7 @@ const SuspenseWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // Public
 const RegisterPage = lazy(() => import('../pages/auth/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/auth/LoginPage'));
+const VerifyEmailPage = lazy(() => import('../pages/auth/VerifyEmailPage'));
 
 // Onboarding
 const OnboardingRolePage = lazy(() => import('../pages/onboarding/OnboardingRolePage'));
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: '/auth/register',
         element: <SuspenseWrapper><RegisterPage /></SuspenseWrapper>,
+      },
+      {
+        path: '/auth/verify-email',
+        element: <SuspenseWrapper><VerifyEmailPage /></SuspenseWrapper>,
       },
     ],
   },

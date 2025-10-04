@@ -5,7 +5,6 @@ import { Job, Company } from '../types';
 type CreateJobPayload = Omit<Job, 'id' | 'createdAt' | 'company'>;
 type UseCreateJobOptions = Omit<UseMutationOptions<Job, Error, CreateJobPayload>, 'mutationFn'>;
 
-// FIX: Update the `company` parameter type to include `ownerId` to match the `jobService.createJob` function signature.
 export const useCreateJob = (company: Pick<Company, 'id' | 'name' | 'slug' | 'logoUrl' | 'ownerId'> | undefined, options?: UseCreateJobOptions) => {
   const queryClient = useQueryClient();
 

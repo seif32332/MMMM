@@ -33,7 +33,6 @@ export const DealCreatePage: React.FC = () => {
     const { showToast } = useToast();
     const navigate = useNavigate();
 
-    // FIX: Explicitly typed `useForm` with `DealFormData` and provided `defaultValues` to ensure type safety between react-hook-form and the zod schema, resolving both the resolver and submit handler type mismatch errors.
     const { control, handleSubmit, formState: { errors } } = useForm<DealFormData>({
         resolver: zodResolver(dealSchema),
         defaultValues: {
@@ -41,8 +40,6 @@ export const DealCreatePage: React.FC = () => {
             summary: '',
             industry: '',
             stage: '',
-            amountMin: undefined,
-            amountMax: undefined,
             country: '',
         }
     });

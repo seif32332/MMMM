@@ -25,12 +25,9 @@ export const TopupModal: React.FC<TopupModalProps> = ({ onClose }) => {
     const { showToast } = useToast();
     const topupMutation = useCreateTopupIntent();
 
-    // FIX: Explicitly type `useForm` with `TopupFormData` and provide `defaultValues` to ensure type safety and resolve the type mismatch between the zod resolver and the form's inferred types, also fixing the submit handler error.
     const { control, handleSubmit, formState: { errors } } = useForm<TopupFormData>({
         resolver: zodResolver(validationSchema),
-        defaultValues: {
-            amount: undefined,
-        },
+        defaultValues: {}
     });
 
     const onSubmit = (data: TopupFormData) => {

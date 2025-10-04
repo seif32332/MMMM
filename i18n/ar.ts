@@ -27,6 +27,16 @@ export const ar = {
 
   // Auth
   'auth.logout_success': 'تم تسجيل خروجك بنجاح.',
+  'auth.verify_email.title': 'تحقق من بريدك الإلكتروني',
+  'auth.verify_email.subtitle': 'الرجاء التحقق من بريدك الوارد للحصول على رابط التحقق لإكمال تسجيلك.',
+  'auth.verify_email.verifying': 'جاري التحقق من بريدك الإلكتروني...',
+  'auth.verify_email.success.title': 'تم التحقق من البريد الإلكتروني!',
+  'auth.verify_email.success.message': 'تم التحقق من بريدك الإلكتروني بنجاح. يتم توجيهك الآن...',
+  'auth.verify_email.error.title': 'فشل التحقق',
+  'auth.verify_email.error.message': 'رابط التحقق غير صالح أو انتهت صلاحيته. الرجاء المحاولة مرة أخرى.',
+  'auth.verification_banner.title': 'لم يتم التحقق من بريدك الإلكتروني.',
+  'auth.verification_banner.resend_link': 'أعد إرسال بريد التحقق.',
+  'auth.verification_banner.resend_success': 'تم إرسال بريد تحقق جديد.',
 
   // Login Page
   'login.title': 'تسجيل الدخول إلى حسابك',
@@ -57,7 +67,7 @@ export const ar = {
   'register.error.policy_required': 'يجب الموافقة على الشروط والأحكام.',
   'register.error.email_exists': 'يوجد حساب مسجل بهذا البريد الإلكتروني.',
   'register.success.title': 'تم إنشاء الحساب!',
-  'register.success.message': 'أهلاً بك في مجلس برو. يتم توجيهك الآن...',
+  'register.success.message': 'أهلاً بك في مجلس برو. الرجاء التحقق من بريدك الإلكتروني لتفعيل حسابك.',
 
   // Password Strength
   'password.strength.very_weak': 'ضعيفة جداً',

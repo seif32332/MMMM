@@ -73,6 +73,7 @@ export const OnboardingDetailsPage: React.FC = () => {
     });
 
     const onSubmit = (data: Record<string, any>) => {
+        // Correctly nest the onboardingDetails within the profile object.
         updateProfileMutation.mutate({ profile: { onboardingDetails: data } });
     };
 

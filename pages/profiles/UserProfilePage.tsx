@@ -94,7 +94,6 @@ export const UserProfilePage: React.FC = () => {
     const [activeTab, setActiveTab] = useState('overview');
     
     const { data: user, isLoading, isError } = useUserProfile(username);
-    // FIX: The usePosts hook expects a string argument for userId, not an object.
     const { data: posts, isLoading: postsLoading } = usePosts(user?.id); 
     
     if (isLoading) {

@@ -35,12 +35,9 @@ export const FundDealModal: React.FC<FundDealModalProps> = ({ deal, onClose }) =
     });
     type FundFormData = z.infer<typeof validationSchema>;
 
-    // FIX: Explicitly type `useForm` with `FundFormData` and provide `defaultValues` to resolve type mismatches between react-hook-form and the zod resolver, and to ensure the submit handler receives correctly typed data.
     const { control, handleSubmit, formState: { errors } } = useForm<FundFormData>({
         resolver: zodResolver(validationSchema),
-        defaultValues: {
-            amount: undefined,
-        }
+        defaultValues: {}
     });
 
     const onSubmit = (data: FundFormData) => {

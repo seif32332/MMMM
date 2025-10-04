@@ -20,6 +20,7 @@ export interface CompanyMembership {
 export interface User {
   id: string;
   email: string;
+  emailVerified?: boolean;
   username?: string;
   fullName?: string;
   avatarUrl?: string;

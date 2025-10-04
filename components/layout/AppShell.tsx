@@ -4,6 +4,7 @@ import { useAuthActions, useAuthStatus } from '../../stores/authStore';
 import { useMe } from '../../hooks/useMe';
 import { Spinner } from '../ui/Spinner';
 import { Header } from '../Header';
+import { EmailVerificationBanner } from '../EmailVerificationBanner';
 
 /**
  * This component handles the initial authentication check by leveraging React Query.
@@ -47,6 +48,7 @@ export const AppShell: React.FC = () => {
         <AuthInitializer>
             <div className="min-h-screen bg-gray-50">
                 <Header />
+                <EmailVerificationBanner />
                 <main>
                     <Outlet />
                 </main>

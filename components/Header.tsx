@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, useNavigate, Link } from 'react-router-dom';
 import { useI18n } from '../i18n';
@@ -76,10 +77,15 @@ const UserMenu: React.FC = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <button onClick={handleLogout} className="flex items-center w-full text-left px-3 py-2 text-sm rounded-md hover:bg-gray-100 text-destructive">
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={handleLogout}
+                                className="w-full justify-start text-destructive hover:text-destructive hover:bg-red-50"
+                            >
                                 <LogoutIcon />
                                 <span className="ml-2 rtl:mr-2">{t('header.userMenu.logout')}</span>
-                            </button>
+                            </Button>
                         </li>
                     </ul>
                 </div>

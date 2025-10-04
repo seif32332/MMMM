@@ -35,6 +35,7 @@ export const RegisterPage: React.FC = () => {
   const { showToast } = useToast();
   
   const [serverError, setServerError] = useState<string | null>(null);
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
   const validationSchema = getValidationSchema(t);
   type RegisterFormData = z.infer<typeof validationSchema>;
@@ -48,9 +49,8 @@ export const RegisterPage: React.FC = () => {
 
   const registerMutation = useRegister({
     onSuccess: () => {
-      showToast(t('register.success.message'), 'success');
-      // Navigate after a short delay to allow the user to read the toast.
-      setTimeout(() => navigate('/onboarding/role'), 1500);
+      showToast(t('register.success.title'), 'success');
+      setRegistrationSuccess(true);
     },
     onError: (error) => {
       const message = error instanceof Error ? error.message : 'An unknown error occurred.';
@@ -63,6 +63,25 @@ export const RegisterPage: React.FC = () => {
     setServerError(null);
     registerMutation.mutate(data);
   };
+
+  if (registrationSuccess) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Header showLogin={true} />
+        <main className="flex items-center justify-center py-12 px-4">
+          <Card className="w-full max-w-md text-center">
+            <CardHeader>
+              <CardTitle>{t('auth.verify_email.title')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{t('register.success.message')}</p>
+              <p className="mt-2 text-sm text-gray-600">{t('auth.verify_email.subtitle')}</p>
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
