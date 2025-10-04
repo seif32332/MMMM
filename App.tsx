@@ -5,7 +5,7 @@ import { I18nProvider } from './i18n';
 import { ToastProvider } from './context/ToastContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { queryClient } from './lib/queryClient';
-import { ChatProvider } from './services/chatAdapter';
+import { ChatProvider } from './context/AuthContext';
 import { MockChatAdapter } from './services/messageService';
 
 const chatAdapter = new MockChatAdapter('user-1');

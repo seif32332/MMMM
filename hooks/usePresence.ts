@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { useChatAdapter } from '../services/chatAdapter';
+import { useChatAdapter } from '../context/AuthContext';
 import { WsEvent, UserStatus, Conversation } from '../types';
 
 /**

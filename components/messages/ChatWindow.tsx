@@ -9,7 +9,7 @@ import { MessageInput } from './MessageInput';
 import { useTypingIndicator } from '../../hooks/useTypingIndicator';
 import { useI18n } from '../../i18n';
 import { DateSeparator } from './DateSeparator';
-import { useChatAdapter } from '../../services/chatAdapter';
+import { useChatAdapter } from '../../context/AuthContext';
 
 const TypingIndicator: React.FC<{ user: { fullName?: string } }> = ({ user }) => {
     const { t } = useI18n();

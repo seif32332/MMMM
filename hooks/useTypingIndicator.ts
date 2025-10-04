@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useChatAdapter } from '../services/chatAdapter';
+import { useChatAdapter } from '../context/AuthContext';
 import { WsEvent } from '../types';
 import { useUser } from '../stores/authStore';
 

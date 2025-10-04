@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { useChatAdapter } from '../services/chatAdapter';
+import { useChatAdapter } from '../context/AuthContext';
 import { Message, WsEvent } from '../types';
 import { useEffect } from 'react';
 

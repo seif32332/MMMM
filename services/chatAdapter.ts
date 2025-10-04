@@ -1,4 +1,3 @@
-import React, { createContext, useContext, ReactNode } from 'react';
 import { Conversation, Message, Paginated, WsEvent } from '../types';
 
 /**
@@ -40,33 +39,3 @@ export interface ChatAdapter {
    */
   subscribe(callback: (event: WsEvent) => void): () => void;
 }
-
-// --- React Context for Dependency Injection ---
-
-const ChatContext = createContext<ChatAdapter | null>(null);
-
-interface ChatProviderProps {
-  adapter: ChatAdapter;
-  children: ReactNode;
-}
-
-/**
- * Provides the ChatAdapter instance to the entire application.
- */
-export const ChatProvider: React.FC<ChatProviderProps> = ({ adapter, children }) => {
-  // FIX: Replaced JSX syntax with React.createElement because this is a .ts file, not .tsx.
-  // JSX is not valid in .ts files and causes parsing errors.
-  return React.createElement(ChatContext.Provider, { value: adapter }, children);
-};
-
-/**
- * A custom hook to access the ChatAdapter from any component.
- * This is the single point of interaction with the chat service for the UI.
- */
-export const useChatAdapter = (): ChatAdapter => {
-  const context = useContext(ChatContext);
-  if (!context) {
-    throw new Error('useChatAdapter must be used within a ChatProvider');
-  }
-  return context;
-};
